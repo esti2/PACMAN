@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>SCORE:<input id="lblScore" type="text" />
+        TIME: <input id="lblTime" type="text" /></p>
+
+    <input id="audio" type="image" src="images/play.png">
+    <br />
+    <canvas id="canvas" height="700" width="1600"></canvas>
+
+    <audio id="targetSound" preload="auto">
+        <source src="sounds/videoplayback.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="endGame" preload="auto">
+        <source src="sounds/end_game.mp3" type="audio/mpeg" />
+    </audio>
+
+
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Game over</p>
+            <p id="endGameTime"></p>
+            <p id="bestResult"></p>
+            <p>Would you like to play again?</p>
+            <button id="yesBtn" onclick="Start()">Yes!</button> <button id="noBtn" onclick="closeModal()">No</button>
+        </div>
+
+    </div>
+    <!-- The Modal Game Over -->
+    <div id="myModalGameOver" class="modal">
+
+        <!-- Modal content Game Over -->
+        <div class="modal-content-game-over">
+            
+            <p id="gameOverTime"></p>
+            <p>Game Over !!! <br><br>Would you like to play again?</p>
+            <button id="yesBtn" onclick="Start()">Yes!</button> <button id="noBtn" onclick="closeModalEndGame(),  closeWindow()">No</button>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="GAME.JS"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</body>
+
+</html>
